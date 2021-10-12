@@ -14,3 +14,19 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/hello', function () {
+    echo ('Hello World');
+});
+
+Route::get('/name/{Ruby}', function ($ruby) {
+    return "Hello World" . $ruby;
+});
+
+Route::get('/name/{ruby}', function ($ruby) {
+    return "Hello " . $ruby;
+})->where('ruby', '[A-Za-z]+');
+
+Route::get('/name/{nama}/{nrp}', function ($ruby, $nrp) {
+    return "Hello " . $ruby . " " .$nrp; 
+})->where('ruby', '[A-Za-z]+');
