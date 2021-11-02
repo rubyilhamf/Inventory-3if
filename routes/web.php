@@ -30,3 +30,8 @@ Route::get('/name/{ruby}', function ($ruby) {
 Route::get('/name/{nama}/{nrp}', function ($ruby, $nrp) {
     return "Hello " . $ruby . " " .$nrp; 
 })->where('ruby', '[A-Za-z]+');
+
+Route::get('/person', 'PersonController@index');
+Route::get('/person/show/{param}', 'PersonController@show');
+Route::resource('/student', 'StudentController');
+
